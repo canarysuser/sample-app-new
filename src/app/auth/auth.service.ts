@@ -7,6 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 
+  isAuthenticated: boolean = false; 
+  
   baseUrl = "http://localhost:7002/api/accounts"
   constructor(
     private http: HttpClient

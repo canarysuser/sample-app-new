@@ -38,6 +38,7 @@ export class LoginComponent {
           localStorage.setItem('expires', response.expires);
           this.navigator.navigate(['/admin/list']);
         }
+        this.service.isAuthenticated = true;
       });
   }
 }

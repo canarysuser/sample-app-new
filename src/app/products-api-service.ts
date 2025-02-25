@@ -16,12 +16,17 @@ export class ProductApiService {
     //ALl URLs used in this Service will have to be updated 
     //as per the new API Controller. 
 
+    getHeader() { 
+        return {
+            "Authorization": "Bearer " + localStorage.getItem("token")
+        }
+    }
     getAllProducts(): any { 
-        return this.http.get(this.baseUrl); 
+        return this.http.get(this.baseUrl, {headers: this.getHeader()}); 
     }
     getProductDetails(productId: number) : Observable<Product>{
         var url = `${this.baseUrl}/${productId}`;
-        return this.http.get<Product>(url)
+        return this.http.get<Product>(url, {headers: this.getHeader()});
     }
     createNew(item: Product) { 
         var body = JSON.stringify(item); 
@@ -29,7 +34,7 @@ export class ProductApiService {
             'Content-Type':'application/json'
         }
         return this.http.post(this.baseUrl, body, {
-            headers: {...headers}
+            headers: {...headers, ...this.getHeader()}
         });
     }
     updateItem(item: Product) { 
