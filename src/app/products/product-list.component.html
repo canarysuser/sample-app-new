@@ -1,0 +1,24 @@
+<div class="card shadow m-auto p-1">
+    <div class="card-header d-flex bg-primary ">
+        <div class="h3 text-center flex-grow-1">
+            Product Details.
+        </div>
+        <button class="btn btn-danger flex-grow-0"
+            (click)="addNew()">Add New</button>
+    </div>
+    <div class="card-body">
+        <table class="table table-info table-striped">
+            <thead>
+                <tr><th>Name</th><th>Price</th><th></th></tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of productList">
+                    <td>{{item.productName}}</td>
+                    <td>{{item.unitPrice | currency}}</td>
+                    <td><button class="btn btn-sm btn-primary" 
+                        (click)="selectedItem(item.productId)">View</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

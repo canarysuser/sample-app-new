@@ -1,0 +1,44 @@
+<div class="card shadow m-auto">
+    <div class="card-header text-center p-2">Product Details</div>
+    <div class="card-body">
+        <h3>Product details will be displayed here tomorrow.</h3>
+        <p>
+            {{productDetails | json}}
+        </p>
+        <form>
+            <div class="form-group">
+                <label for="productName">Product Name</label>
+                <input type="text" name="productName" id="productName"
+                    [(ngModel)]="productDetails.productName"
+                    class="form-control"/>
+            </div>
+            <div class="row form-group">
+                <div class="col-3 p-1"><label for='unitPrice'>Unit Price</label></div>
+                <div class="col-9">
+                    <input type="text" name="unitPrice" id="unitPrice"
+                        [(ngModel)]="productDetails.unitPrice"
+                        class="form-control"/> 
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="unitsInStock">Stock Level</label>
+                <input type="text" name="unitsInStock" id="unitsInStock"
+                    [(ngModel)]="productDetails.unitsInStock"
+                    class="form-control"/>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="discontinued"
+                name="discontinued" [(ngModel)]="productDetails.discontinued"
+                class="form-checkbox"/>
+                <label for="discontinued">Discontinued</label>
+            </div>
+            <div class="text-center">
+                @if(!productDetails.productId) { 
+                    <button (click)="updateChanges()" 
+                        class="btn btn-success">Update</button>
+                }
+            </div>
+        </form>
+        
+    </div>
+</div>

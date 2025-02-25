@@ -1,0 +1,35 @@
+<div class="card shadow m-auto p-1 w-50">
+    <div class="card-header d-flex bg-primary ">
+        <div class="h3 text-center flex-grow-1">
+            Product Details
+        </div>
+        <a class="btn btn-secondary flex-grow-0"
+            routerLink="/admin/list" >Back to List</a>
+    </div>
+    <div class="card-body">
+       <form (ngSubmit)="onSubmit()" [formGroup]="productForm">
+       
+        <div class="form-group">
+            <label for="productName">Product Name</label>
+            <input type="text" name="productName" formControlName="productName"
+                class="form-control" readonly/>
+        </div>
+        <div class="form-group">
+            <label for="unitPrice">Unit Price</label>
+            <input type="text" name="unitPrice" formControlName="unitPrice"
+            class="form-control" readonly/>
+        </div>
+        <div class="form-group">
+            <label for="unitsInStock">Stock Level</label>
+            <input type="text" name="unitsInStock" formControlName="unitsInStock"
+            class="form-control" readonly/>
+        </div>
+        <div class="form-group">
+            <label for="discontinued">Discontinued</label>
+            <input type="checkbox" id="discontinued"
+            name="discontinued" formControlName="discontinued"
+            class="form-checkbox"/>
+        </div>
+       </form>
+    </div>
+</div>

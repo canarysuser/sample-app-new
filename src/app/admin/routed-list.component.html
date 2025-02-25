@@ -1,0 +1,31 @@
+<div class="card shadow m-auto p-1 w-50">
+    <div class="card-header d-flex bg-primary ">
+        <div class="h3 text-center flex-grow-1">
+            Product Details.
+        </div>
+        <a class="btn btn-success flex-grow-0"
+            routerLink="/admin/new" >Add New</a>
+    </div>
+    <div class="card-body">
+        <table class="table table-info table-striped">
+            <thead>
+                <tr><th>Name</th><th>Price</th><th></th></tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of productList">
+                    <td>{{item.productName}}</td>
+                    <td>{{item.unitPrice | currency}}</td>
+                    <td>
+                        <a class="btn btn-sm btn-primary" 
+                         [routerLink]="['/admin/view', item.productId]">View</a>
+                         <a class="btn btn-sm btn-info" 
+                         [routerLink]="['/admin/edit', item.productId]">Edit</a>
+                         <a class="btn btn-sm btn-danger" 
+                         [routerLink]="['/admin/del', item.productId]">Del</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
