@@ -20,11 +20,14 @@ export class LoginComponent {
   });
   service: AuthService = inject(AuthService);
   model: { email: string, password: string } = { email: '', password: '' };
+
+
   onSubmit() {
     this.model = {
       email: this.loginForm.controls["email"].value,
       password: this.loginForm.controls["password"].value
     }
+    console.log(this.model)
     this.service.authenticate(this.model.email, this.model.password)
       .subscribe((response) => {
         if (response.token) {

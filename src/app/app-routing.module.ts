@@ -3,10 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './ui/home.component';
 import { ProductHomeComponent } from './products/product-home.component';
 import { PageNotFoundComponent } from './ui/page-not-found.component';
+import { LoginComponent } from './auth/login.component';
 
 const routes: Routes = [
   {path:'home' , component: HomeComponent},
   {path: 'products', component: ProductHomeComponent},
+  {path: 'login', component: LoginComponent},
   {path: '', redirectTo:'/home', pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent}
 ];
