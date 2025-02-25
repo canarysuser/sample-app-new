@@ -8,7 +8,7 @@ import { HomeComponent } from './ui/home.component';
 import { ProductHomeComponent } from './products/product-home.component';
 import { ProductListComponent } from './products/product-list.component';
 import { ProductDetailsComponent } from './products/product-details.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './ui/page-not-found.component';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
@@ -38,6 +38,7 @@ import { AdminModule } from './admin/admin.module';
     BrowserModule, 
     RouterModule,
     FormsModule,
+    ReactiveFormsModule,
     AdminModule,
     AppRoutingModule
   ],

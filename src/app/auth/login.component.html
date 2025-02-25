@@ -10,7 +10,7 @@
                 <label for="username">Username</label>
                 <input type="text" name="username" formControlName="username"
                     class="form-control" />
-                <div *ngIf="loginForm.get('username').invalid && loginForm.get('username').touched"
+                <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched"
                     class="alert alert-danger">
                     Username is required
             </div>  
@@ -19,7 +19,7 @@
                 <label for="password">Password</label>
                 <input type="password" name="password" formControlName="password"
                     class="form-control" />
-                <div *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched"
+                <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
                     class="alert alert-danger">
                     Password is required
                 </div>
